@@ -1,9 +1,10 @@
 <?php
+
 /**
  * 中文网字计划插件，旨在加快自定义中文字体的加载体验
  *
  * @package 中文网字计划
- * @version 1.0.0
+ * @version 1.0.1
  * @author MoXiify
  * @link https://github.com/MoXiaoXi233/ChineseFontsPlan-Typecho
  */
@@ -74,7 +75,7 @@ class ChineseFontsPlan_Plugin implements Typecho_Plugin_Interface
         $targetClass = $options->targetClass;
 
         if (!empty($fontUrl)) {
-            echo '<link rel="stylesheet preconnect" href="' . $fontUrl . '" type="text/css" />' . "\n";
+            echo '<link rel="stylesheet preconnect" href="' . $fontUrl . '" type="text/css" media="print" onload="this.media=\'all\'" />' . "\n";
         }
 
         echo '<style type="text/css">';
